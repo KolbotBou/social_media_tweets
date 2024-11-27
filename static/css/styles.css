@@ -1,0 +1,11 @@
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.margin_20px {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
