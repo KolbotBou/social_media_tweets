@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h3><a href="{% url "home" %}"> <i class="fa-solid fa-arrow-left"></i></a> &nbsp; Post </h3>
+
+<br>
+
+<a href="{% url "useraccount_detail" post.useraccount.pk %}"> <h5 class="profile_name">
+    <i class="fa-solid fa-circle-user"></i> &nbsp; {{post.useraccount}}</h5></a>
+<p class="post_caption">{{post.caption}}</p>
+<p class="post_date">{{post.post_date}}</p>
+
+<hr>
+
+{% endblock content %}

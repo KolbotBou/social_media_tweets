@@ -4,6 +4,8 @@
 <html lang="en">
   <head>
     <title>Tweets</title>
+
+    <!--Adding Icon to the Website-->
     <link rel="icon" type="image/x-icon" href="{% static "images/favicon.ico" %}">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,26 +40,28 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-secondary bg-secondary fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href={% url "home" %}>
             <img src="https://firebasestorage.googleapis.com/v0/b/instagram-firebase-25884.appspot.com/o/Tweets.png?alt=media&token=204a5c8e-f25a-4873-b88d-e21a26a30294"
-                alt="" class="img-fluid logo"> </a>
+                alt="" class="img-fluid logo" style="margin-left: 10px"> </a>
       </div>
     </nav>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-2 bg-secondary text-white">
+            <div class="col-sm-2" style="margin-top: 8px">
 
                 {% block sidebar %}
                 <ul class="sidebar-nav nav flex-column">
-                  <li class="nav-item margin_20px"><i class="fa-solid fa-house"></i> Home </li>
-                  <li class="nav-item margin_20px"><i class="fa-solid fa-user"></i> Profile </li>
+                  <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">
+                    <i class="fa-solid fa-house"></i> Home </a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">
+                    <i class="fa-solid fa-user"></i> Profile </a></li>
 
                   <hr>
-
-                  <li class="nav-item margin_20px"><i class="fa-solid fa-user-plus"></i> Login </li>
+                  <li class="nav-item"><a class="nav-link" href="#">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login </a></li>
                 {% endblock sidebar %}
                      
             </div>

@@ -1,11 +1,49 @@
+body {
+    padding-top: 70px;  /* Add Padding to avoid having content wrap under NavBar*/
+}
+
+.sidebar-nav {
+    position: fixed;
+}
+
+.hr{
+    width: 100%;
+}
 
 .container {
     width: 100%;
     margin: 0;
     padding: 0;
+ 
 }
 
-.margin_20px {
-    margin-left: 20px;
-    margin-bottom: 10px;
+.nav-link {
+    color: black;
+}
+
+.profile_name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.post_date {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.post_caption {
+    font-size: 20px;
+}
+
+.dropdown-toggle {
+    width: 100%;
+}
+
+a { 
+    text-decoration: none;
+    color: inherit;
+} 
+
+a:hover { 
+    text-decoration: none;
 }

@@ -19,7 +19,7 @@ class UserAccount(models.Model):
         """
         Returns the url to access a particular account user.
         """
-        return reverse('account', args=[str(self.id)])
+        return reverse('useraccount_detail', args=[str(self.id)])
 
     def __str__(self):
         """
@@ -43,7 +43,7 @@ class Post(models.Model):
         """
         Returns the url to access a particular post tweets instance.
         """
-        return reverse('post-detail', args=[str(self.id)])
+        return reverse('post_detail', args=[str(self.id)])
 
     def __str__(self):
         """
