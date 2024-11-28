@@ -3,7 +3,13 @@ from . import views
 
 urlpatterns = [
 
-    # When a URL is accessed, the Function in the View.py file will be accessed and run
+# HOMEPAGE URL
     path('', views.home, name='home'), # Route is Main URL = /home/
+
+# PROFILE / USERACCOUNT RELATED
+    path('useraccount/<int:pk>/', views.UserAccountDetailView.as_view(), name='useraccount_detail'),
+
+# POST RELATED
+    path('post/<int:pk>/', views.PostDetailView.as_view(), name = "post_detail"),
 
 ]

@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h4> {{ useraccount.user }} </h4>
+
+<p><strong> Bio: </strong> {{ useraccount.bio }} </p>
+
+<p><strong> Total Number of Posts: </strong> {{ useraccount.post_set.count }} </p>
+
+{% for post in useraccount.post_set.all %}
+{% comment %} REVERSE RELATION - getting all data/attributes of each Post by UserAccount {% endcomment %}
+
+<div class="card" style="margin-top: 10px">
+    <div class="card-body">
+        <a href="{{ useraccount.get_absolute_url }}"> <h5 class="card-title profile_name">
+            <i class="fa-solid fa-circle-user"></i> &nbsp; {{post.useraccount}}</h5></a>
+        <p class="card-text post_date">{{post.post_date}}</p>
+        <p class="card-text post_caption">{{post.caption}}</p>
+        <a href="{% url 'post_detail' post.pk %}" style='font-size: 20px; width: 100%'>
+            <button type="button" class="btn btn-secondary dropdown-toggle">More Details</button></a>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock content %}

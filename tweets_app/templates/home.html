@@ -2,7 +2,19 @@
 
 {% block content %}
 
-<h1> HomePage View </h1>
+<h1> NewsFeeds </h1>
+
+{% for post in posts %}
+<div class="card" style="margin-top: 10px">
+    <div class="card-body">
+        <a href= "{% url "useraccount_detail" post.useraccount.pk %}"> 
+            <h5 class="card-title profile_name"><i class="fa-solid fa-circle-user"></i> &nbsp; {{post.useraccount}}</h5> </a>
+        <p class="card-text post_date">{{post.post_date}}</p>
+        <p class="card-text post_caption">{{post.caption}}</p>
+        <a href="{% url 'post_detail' post.pk %}" style='font-size: 20px; width: 100%'> 
+            <button type="button" class="btn btn-secondary dropdown-toggle"> More Details</button> </a>
+    </div>
+</div>
+{% endfor %}
 
 {% endblock content %}
-
