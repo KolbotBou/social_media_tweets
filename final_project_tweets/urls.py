@@ -31,3 +31,9 @@ from django.views.generic import RedirectView
 urlpatterns += [
     path('',RedirectView.as_view(url='home/', permanent = False)),
 ]
+
+
+# Adding URL for USER AUTHENTICATION
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+]

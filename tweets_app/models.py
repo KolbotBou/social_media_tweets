@@ -59,7 +59,7 @@ class PostComment(models.Model):
     useraccount = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
       # Foreign Key used because PostComment can only have one UserAccount, but users can have multiple comments
     post_date = models.DateTimeField(auto_now_add=True)
-    post= models.ForeignKey(Post, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     
     class Meta:
         ordering = ["-post_date"]
