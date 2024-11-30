@@ -58,8 +58,11 @@ ROOT_URLCONF = 'final_project_tweets.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+
+        # Adding Based Directory Path for User Authentication
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
+        
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -138,3 +141,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirect to home URL after login (Django has Default redirects to /accounts/profile/)
+# Basically is to Redirect URL to Main URL (Rather than the Django Default URL)
+LOGIN_REDIRECT_URL = '/'

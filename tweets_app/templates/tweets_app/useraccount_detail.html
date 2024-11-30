@@ -2,11 +2,21 @@
 
 {% block content %}
 
-<h4> {{ useraccount.user }} </h4>
+<h2><a href="{% url "home" %}"> <i class="fa-solid fa-arrow-left"></i></a> &nbsp; {{ useraccount.user }} </h2>
 
-<p><strong> Bio: </strong> {{ useraccount.bio }} </p>
+<i class="fa-regular fa-circle-user fas fa-camera fa-10x"></i>
+<h4><strong> {{ useraccount.user }} </strong></h4>
+<h6> &nbsp; @{{ useraccount.user }} </h6>
 
-<p><strong> Total Number of Posts: </strong> {{ useraccount.post_set.count }} </p>
+<br>
+
+<p> {{ useraccount.bio }} </p>
+
+<!--<p><strong> Total Number of Posts: </strong> {{ useraccount.post_set.count }} </p>-->
+
+<hr>
+
+<h4><strong> Posts </h4></strong>
 
 {% for post in useraccount.post_set.all %}
 {% comment %} REVERSE RELATION - getting all data/attributes of each Post by UserAccount {% endcomment %}

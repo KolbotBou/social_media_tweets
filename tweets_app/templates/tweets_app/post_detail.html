@@ -6,11 +6,42 @@
 
 <br>
 
-<a href="{% url "useraccount_detail" post.useraccount.pk %}"> <h5 class="profile_name">
-    <i class="fa-solid fa-circle-user"></i> &nbsp; {{post.useraccount}}</h5></a>
+<i class="fa-solid fa-circle-user icon fas fa-camera fa-3x"></i>    
+<a href="{% url "useraccount_detail" post.useraccount.pk %}"> <p class="profile_name">
+    {{post.useraccount}}</p></a>
+<p> @ {{post.useraccount}} </p>
+
 <p class="post_caption">{{post.caption}}</p>
 <p class="post_date">{{post.post_date}}</p>
 
 <hr>
+
+<strong><h3>Comments</h3></strong>
+
+<hr>
+
+{% if post.postcomment_set.exists %}
+
+{% for comment in post.postcomment_set.all %}
+
+<p> <a href="{% url "useraccount_detail" comment.useraccount.pk %}"> <i class="fa-solid fa-circle-user icon fas fa-camera fa-2x"></i>
+    <strong> <span class="profile_name"> {{comment.useraccount}} </span> </strong> | {{comment.post_date}} </a></p>
+<p> {{comment.description}} </p>
+<hr>
+
+{% endfor %}
+
+{% else %}
+
+<p> This Post has no comments. </p>
+<hr>
+
+{% endif %}
+
+{% if user.is_authenticated %}
+<a href="{% url "postcomment-create" post.pk %}" > Comment </a>
+{% else %}
+<p> To add a comment, please <a href="{% url "login" %}"> Login </a></p>
+{% endif %}
 
 {% endblock content %}

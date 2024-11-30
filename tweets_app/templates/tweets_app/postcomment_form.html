@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<p> Post your comment for: <a href="{% url "post_detail" selected_post.pk %}"> {{ selected_post.caption }} </a> </p>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <button type="submit">Submit</button>
+</form>
+
+{% endblock content %}
