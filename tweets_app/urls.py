@@ -12,6 +12,7 @@ urlpatterns = [
 # POST RELATED
     path('post/<int:pk>/', views.PostDetailView.as_view(), name = "post_detail"),
     path('post/create/', views.PostCreateView.as_view(), name = 'post-create'),
+    path('post/<int:pk>/delete', views.PostDeleteView.as_view(), name = 'post-delete'),
 
 # POSTCOMMENT RELATED
     path('comment/<int:pk>/create/', views.PostCommentCreateView.as_view(), name='postcomment-create'),

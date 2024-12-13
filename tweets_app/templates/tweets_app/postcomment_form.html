@@ -2,14 +2,14 @@
 
 {% block content %}
 
-<p> Post your comment for: <a href="{% url "post_detail" selected_post.pk %}"> {{ selected_post.caption }} </a> </p>
+<p> Post your comment for: <a href="{% url "post_detail" selected_post.pk %}"> <strong> {{ selected_post.caption }} </strong></a> </p>
 
 <form method="POST">
     {% csrf_token %}
     <table>
         {{ form.as_table }}
     </table>
-    <button type="submit">Submit</button>
+    <button type="submit" class="btn btn-secondary">Comment</button>
 </form>
 
 {% endblock content %}
