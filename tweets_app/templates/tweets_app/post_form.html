@@ -6,10 +6,11 @@
 
 <form method="POST">
     {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <button type="submit">Submit</button>
+    
+    <strong><label for="caption">Caption:</label></strong>
+    <textarea class="form-control" rows="5" id="caption" name="caption"></textarea>
+    <br>
+    <button type="submit" class="btn btn-secondary">Post</button>
 </form>
 
 {% endblock content %}

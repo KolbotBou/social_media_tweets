@@ -2,9 +2,24 @@
 
 {% block content %}
 
-<h2><a href="{% url "home" %}"> <i class="fa-solid fa-arrow-left"></i></a> &nbsp; {{ useraccount.user }} </h2>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-1">
+        <a href="{% url "home" %}"> <i class="fa-solid fa-arrow-left fa-3x"></i></a>
+      </div>
+      <div class="col-sm-10">
+        <div class="row" style="line-height: 0.5">
+          <p class="profile_name" style="padding-top: 5px">
+            {{ useraccount.user }}</p>
+          <p> {{ useraccount.post_set.count }} posts </p>
+        </div>
+      </div>
+    </div>
+</div>
 
-<i class="fa-regular fa-circle-user fas fa-camera fa-10x"></i>
+<br>
+
+<i class="fa-regular fa-circle-user fas fa-camera fa-8x"></i>
 <h4><strong> {{ useraccount.user }} </strong></h4>
 <h6> &nbsp; @{{ useraccount.user }} </h6>
 
@@ -12,7 +27,7 @@
 
 <p> {{ useraccount.bio }} </p>
 
-<!--<p><strong> Total Number of Posts: </strong> {{ useraccount.post_set.count }} </p>-->
+
 
 <hr>
 

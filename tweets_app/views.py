@@ -12,7 +12,7 @@ class UserAccountDetailView(generic.DetailView):
     model = UserAccount
 
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from django.urls import reverse_lazy
 
 # POST MODEL
@@ -36,6 +36,10 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         form.instance.useraccount = UserAccount.objects.get(user = self.request.user)
 
         return form
+    
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+    success_url = reverse_lazy('home')
 
 # POSTCOMMENT MODEL
 class PostCommentCreateView(LoginRequiredMixin, CreateView):
@@ -63,5 +67,6 @@ class PostCommentCreateView(LoginRequiredMixin, CreateView):
 
         return context
 
+    # To Redirect USER back to the Post USER was on after commenting
     def get_success_url(self):
         return reverse_lazy('post_detail', kwargs={'pk': self.kwargs.get('pk')})

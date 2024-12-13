@@ -2,6 +2,19 @@ body {
     padding-top: 70px;  /* Add Padding to avoid having content wrap under NavBar*/
 }
 
+.kanit-bold {
+    font-family: "Kanit", sans-serif;
+    font-style: normal;
+    font-size: 14pt;
+  }
+
+.inter-bodyfont {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
 .sidebar-nav {
     position: fixed;
 }
